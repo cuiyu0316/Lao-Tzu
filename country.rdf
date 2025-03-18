@@ -1,0 +1,2755 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://tc.org/onto.owl"
+         xmlns="http://tc.org/onto.owl#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+         xmlns:sche="https://schema.org/"
+         xmlns:onto="https://tc.org/onto.owl#">
+
+<owl:Ontology rdf:about="http://tc.org/onto.owl"/>
+
+<owl:ObjectProperty rdf:about="https://schema.org/inLanguage">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="https://schema.org/Language"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://schema.org/publication">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="https://schema.org/PublicationEvent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#hasAuthor">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="https://tc.org/onto.owl#Author"/>
+  <owl:inverseOf rdf:resource="https://tc.org/onto.owl#hasBook"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#hasBook">
+  <rdfs:domain rdf:resource="https://schema.org/Person"/>
+  <rdfs:range rdf:resource="https://tc.org/onto.owl#AuthorBook"/>
+  <owl:inverseOf rdf:resource="https://tc.org/onto.owl#hasAuthor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#person">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#Author"/>
+  <rdfs:range rdf:resource="https://schema.org/Person"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#authorRole">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#Author"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#AuthorBook"/>
+  <rdfs:range rdf:resource="https://tc.org/onto.owl#AuthorRoleType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#translationFromBook">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="https://tc.org/onto.owl#TranslationBook"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#translationToBook">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="https://tc.org/onto.owl#TranslationBook"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#translationRole">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#TranslationBook"/>
+  <rdfs:range rdf:resource="https://tc.org/onto.owl#TranslationRoleType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#translationBook">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#TranslationBook"/>
+  <rdfs:range rdf:resource="https://schema.org/Book"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#expandCountry"/>
+
+<owl:ObjectProperty rdf:about="#translationType"/>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#publishCount">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://schema.org/review">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="https://schema.org/Review"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://schema.org/reviewRating">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://schema.org/Review"/>
+  <rdfs:range rdf:resource="https://schema.org/Rating"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#hasEvaluation">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="https://tc.org/onto.owl#Evaluation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#evaluationMethod">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#Evaluation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#book">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#AuthorBook"/>
+  <rdfs:range rdf:resource="https://schema.org/Book"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#wife">
+  <rdfs:domain rdf:resource="https://schema.org/Person"/>
+  <rdfs:range rdf:resource="https://schema.org/Person"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#husband">
+  <rdfs:domain rdf:resource="https://schema.org/Person"/>
+  <rdfs:range rdf:resource="https://schema.org/Person"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#impactOn">
+  <rdfs:domain rdf:resource="https://schema.org/Person"/>
+  <rdfs:range rdf:resource="https://schema.org/Person"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://schema.org/publishedBy">
+  <rdfs:domain rdf:resource="https://schema.org/PublicationEvent"/>
+  <rdfs:range rdf:resource="https://schema.org/Organization"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://schema.org/location">
+  <rdfs:domain rdf:resource="https://schema.org/Organization"/>
+  <rdfs:domain rdf:resource="https://schema.org/Event"/>
+  <rdfs:range rdf:resource="https://schema.org/Place"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#officalCountry"/>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#nonOfficalCountry">
+  <rdfs:domain rdf:resource="https://schema.org/Language"/>
+  <rdfs:range rdf:resource="https://schema.org/Country"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://www.geonames.org/parentCountry">
+  <rdfs:domain rdf:resource="https://schema.org/City"/>
+  <rdfs:range rdf:resource="https://schema.org/Country"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://www.geonames.org/colonizer">
+  <rdfs:domain rdf:resource="https://schema.org/Country"/>
+  <rdfs:range rdf:resource="https://schema.org/Country"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://yago-knowledge.org/resource/officialLanguage">
+  <rdfs:domain rdf:resource="https://schema.org/Country"/>
+  <rdfs:range rdf:resource="https://schema.org/Language"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://yago-knowledge.org/resource/nonofficialLanguage">
+  <rdfs:domain rdf:resource="https://schema.org/Country"/>
+  <rdfs:range rdf:resource="https://schema.org/Language"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="https://tc.org/onto.owl#translationType"/>
+
+<owl:DatatypeProperty rdf:about="https://schema.org/alternateName">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://schema.org/description">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://schema.org/sameAs">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#inConcept">
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#publicationCount">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://schema.org/Book"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://schema.org/datePublished">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://schema.org/Review"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://schema.org/isBasedOn">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://schema.org/Review"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#evaluationTime">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#Evaluation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#evaluationValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="https://tc.org/onto.owl#Evaluation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+  <rdfs:domain rdf:resource="https://schema.org/Person"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#dbpediaId_person">
+  <rdfs:domain rdf:resource="https://schema.org/Person"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://schema.org/startDate">
+  <rdfs:domain rdf:resource="https://schema.org/Event"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#languageISO">
+  <rdfs:domain rdf:resource="https://schema.org/Language"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#wikiId_language">
+  <rdfs:domain rdf:resource="https://schema.org/Language"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#geonamesId">
+  <rdfs:domain rdf:resource="https://schema.org/Place"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#dbpediaId_place">
+  <rdfs:domain rdf:resource="https://schema.org/Place"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#wikiId_place">
+  <rdfs:domain rdf:resource="https://schema.org/Place"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#gadmId">
+  <rdfs:domain rdf:resource="https://schema.org/Country"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="https://tc.org/onto.owl#iso2">
+  <rdfs:domain rdf:resource="https://schema.org/Country"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="https://schema.org/Book">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Language">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/PublicationEvent">
+  <rdfs:subClassOf rdf:resource="https://schema.org/Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#Author">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Constraint"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Person">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#AuthorBook">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Constraint"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#AuthorRoleType">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Type"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:oneOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#firstAuthor"/>
+        <rdf:Description rdf:about="#secondAuthor"/>
+        <rdf:Description rdf:about="#thirdAuthor"/>
+        <rdf:Description rdf:about="#otherAuthor"/>
+      </owl:oneOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#TranslationBook">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Constraint"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#TranslationRoleType">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Type"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:oneOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#onlyTranslation"/>
+        <rdf:Description rdf:about="#asBasis"/>
+        <rdf:Description rdf:about="#asReference"/>
+      </owl:oneOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Review">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Constraint"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Rating">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#Evaluation">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Constraint"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Organization">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Place">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/Country">
+  <rdfs:subClassOf rdf:resource="https://schema.org/Place"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://schema.org/City">
+  <rdfs:subClassOf rdf:resource="https://schema.org/Place"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#Type">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#TranslationType">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Type"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:oneOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#originalTranslation"/>
+        <rdf:Description rdf:about="#annotationTranslation"/>
+        <rdf:Description rdf:about="#translation"/>
+      </owl:oneOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#Constraint">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="https://tc.org/onto.owl#CountryInformation">
+  <rdfs:subClassOf rdf:resource="https://tc.org/onto.owl#Constraint"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#firstAuthor">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#AuthorRoleType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#secondAuthor">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#AuthorRoleType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#thirdAuthor">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#AuthorRoleType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#otherAuthor">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#AuthorRoleType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#onlyTranslation">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#TranslationRoleType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#asBasis">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#TranslationRoleType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#asReference">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#TranslationRoleType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#originalTranslation">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#TranslationType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#annotationTranslation">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#TranslationType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#translation">
+  <rdf:type rdf:resource="https://tc.org/onto.owl#TranslationType"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AD">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andorra</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">安道尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q228</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3041565</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andorra</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United Arab Emirates</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿拉伯联合酋长国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q878</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">290557</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United_Arab_Emirates</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Afghanistan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿富汗</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q889</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1149361</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Afghanistan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antigua and Barbuda</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">安提瓜和巴布达</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q781</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3576396</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antigua_and_Barbuda</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anguilla</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">安圭拉</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q25228</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3573511</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Albania</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿尔巴尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q222</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">783754</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Albania</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Armenia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">亚美尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q399</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">174982</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Armenia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angola</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">安哥拉</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q916</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3351879</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angola</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AQ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antarctica</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">南极洲</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q21590062</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6697173</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Argentina</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿根廷</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q414</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3865483</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Argentina</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">American Samoa</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">美属萨摩亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q16641</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5880801</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Austria</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">奥地利</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q40</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2782113</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Austria</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Australia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">澳大利亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q408</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2077456</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Australia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aruba</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿鲁巴</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q21203</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3577279</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aruba</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AX">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aland Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">奥兰群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q5689</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">661882</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azerbaijan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿塞拜疆</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q227</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">587116</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azerbaijan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bosnia and Herzegovina</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">波斯尼亚和黑塞哥维那</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q225</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3277605</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bosnia_and_Herzegovina</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BB">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barbados</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴巴多斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q244</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3374084</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barbados</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BD">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bangladesh</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">孟加拉国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q902</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1210997</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bangladesh</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belgium</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">比利时</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q31</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2802361</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belgium</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burkina Faso</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">布基纳法索</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q965</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2361809</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burkina_Faso</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bulgaria</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">保加利亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q219</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">732800</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bulgaria</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bahrain</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴林</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q398</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">290291</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bahrain</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burundi</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">布隆迪</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q967</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">433561</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burundi</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BJ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Benin</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">贝宁</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q962</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2395170</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Benin</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint Barthelemy</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣巴泰勒米</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q25362</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3578476</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bermuda</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">百慕大</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q23635</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3573345</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brunei</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">文莱</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q921</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1820814</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brunei</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bolivia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">玻利维亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q750</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3923057</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bolivia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BQ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bonaire, Saint Eustatius and Saba </rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">博奈尔岛、圣尤斯达蒂斯和萨巴</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q27561</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7626844</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴西</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q155</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3469034</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brazil</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bahamas</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴哈马</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q778</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3572887</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The_Bahamas</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bhutan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">不丹</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q917</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1252634</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bhutan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BV">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bouvet Island</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">布韦岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q23408</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3371123</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Botswana</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">博茨瓦纳</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q963</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">933860</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Botswana</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belarus</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">白俄罗斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q184</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">630336</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belarus</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#BZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belize</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">伯利兹</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q242</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3582678</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belize</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">加拿大</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q16</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6251999</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canada</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cocos Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">科科斯（基林）群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q36004</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1547376</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CD">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Democratic Republic of the Congo</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">扎伊尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q974</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">203312</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Democratic_Republic_of_the_Congo</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Central African Republic</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">中非共和国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q929</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">239880</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Central_African_Republic</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Republic of the Congo</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">刚果共和国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q971</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2260494</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Republic_of_the_Congo</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switzerland</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">瑞士</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q39</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2658434</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switzerland</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ivory Coast</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">象牙海岸</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1008</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2287781</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cook Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">库克群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q26988</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1899402</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chile</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">智利</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q298</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3895114</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chile</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cameroon</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">喀麦隆</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1009</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2233387</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cameroon</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">China</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">中国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q148</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1814991</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">People%27s_Republic_of_China</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colombia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">哥伦比亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q739</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3686110</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colombia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costa Rica</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">哥斯达黎加</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q800</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3624060</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costa_Rica</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuba</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">古巴</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q241</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3562981</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuba</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CV">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cabo Verde</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">佛得角</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1011</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3374766</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cape_Verde</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Curacao</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">库拉索</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q25279</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7626836</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CX">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christmas Island</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣诞岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q31063</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2078138</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyprus</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">塞浦路斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q229</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">146669</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyprus</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Czechia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">捷克</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q213</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3077311</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Czech_Republic</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#DE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Germany</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">德国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q183</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2921044</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Germany</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#DJ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Djibouti</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">吉布提</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q977</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">223816</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Djibouti</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#DK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denmark</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">丹麦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q35</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2623032</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Denmark</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#DM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dominica</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">多米尼克</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q784</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3575830</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dominica</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#DO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dominican Republic</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">多米尼加共和国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q786</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3508796</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dominican_Republic</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#DZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algeria</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿尔及利亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q262</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2589581</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algeria</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#EC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ecuador</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">厄瓜多尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q736</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3658394</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ecuador</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#EE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estonia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">爱沙尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q191</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">453733</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estonia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#EG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Egypt</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">埃及</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q79</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">357994</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Egypt</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#EH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Western Sahara</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">西撒哈拉</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q6250</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2461445</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ER">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eritrea</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">厄立特里亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q986</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">338010</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eritrea</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ES">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spain</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">西班牙</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q29</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2510769</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spain</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ET">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ethiopia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">埃塞俄比亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q115</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">337996</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ethiopia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#FI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">芬兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q33</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">660013</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#FJ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fiji</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">斐济</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q712</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2205218</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fiji</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#FK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Falkland Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">福克兰群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q9648</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3474414</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#FM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Micronesia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">密克罗尼西亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q702</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2081918</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Federated_States_of_Micronesia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#FO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Faroe Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">法罗群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q4628</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2622320</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#FR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">France</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">法国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q142</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3017382</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">France</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gabon</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">加蓬</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1000</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2400553</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gabon</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GB">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United Kingdom</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">英国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q145</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2635167</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United_Kingdom</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GD">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grenada</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">格林纳达</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q769</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3580239</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grenada</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Georgia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">格鲁吉亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q230</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">614540</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Georgia_%28country%29</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">French Guiana</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">法属圭亚那</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q3769</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3381670</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guernsey</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">根西岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q25230</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3042362</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guernsey</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ghana</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">加纳</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q117</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2300660</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ghana</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gibraltar</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">直布罗陀</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1410</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2411586</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greenland</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">格陵兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q223</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3425505</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greenland</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gambia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">冈比亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1005</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2413451</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The_Gambia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guinea</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">几内亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1006</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2420477</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guinea</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GP">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guadeloupe</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">瓜德罗普</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q17012</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3579143</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GQ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equatorial Guinea</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">赤道几内亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q983</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2309096</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equatorial_Guinea</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greece</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">希腊</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q41</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">390903</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greece</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Georgia and the South Sandwich Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">南乔治亚和南桑威奇群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q35086</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3474415</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guatemala</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">危地马拉</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q774</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3595528</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guatemala</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guam</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">关岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q16635</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4043988</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guinea-Bissau</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">几内亚比绍</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1007</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2372248</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guinea-Bissau</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#GY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guyana</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圭亚那</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q734</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3378535</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guyana</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#HK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hong Kong</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">香港</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q8646</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1819730</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hong_Kong</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#HM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heard Island and McDonald Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">赫德岛和麦克唐纳群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q131198</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1547314</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#HN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Honduras</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">洪都拉斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q783</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3608932</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Honduras</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#HR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Croatia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">克罗地亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q224</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3202326</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Croatia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#HT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haiti</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">海地</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q790</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3723988</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haiti</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#HU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hungary</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">匈牙利</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q28</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">719819</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hungary</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ID">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indonesia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">印度尼西亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q252</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1643084</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indonesia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ireland</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">爱尔兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q27</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2963597</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Republic_of_Ireland</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Israel</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">以色列</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q801</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">294640</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Isle of Man</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马恩岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q9676</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3042225</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Isle_of_Man</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">India</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">印度</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q668</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1269750</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">India</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">British Indian Ocean Territory</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">英属印度洋领地</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q43448</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1282588</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IQ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iraq</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">伊拉克</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q796</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">99237</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iraq</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iran</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">伊朗</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q794</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">130758</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iran</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iceland</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">冰岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q189</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2629691</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iceland</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#IT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Italy</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">意大利</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q38</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3175395</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Italy</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#JE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jersey</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">泽西岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q785</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3042142</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jersey</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#JM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jamaica</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">牙买加</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q766</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3489940</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jamaica</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#JO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jordan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">约旦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q810</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">248816</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jordan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#JP">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">日本</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q17</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1861060</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kenya</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">肯尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q114</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192950</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kenya</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kyrgyzstan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">吉尔吉斯斯坦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q813</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1527747</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kyrgyzstan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cambodia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">柬埔寨</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q424</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1831722</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cambodia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kiribati</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">基里巴斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q710</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4030945</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kiribati</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comoros</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">科摩罗</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q970</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">921929</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comoros</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint Kitts and Nevis</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣基茨和尼维斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q763</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3575174</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Kitts_and_Nevis</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KP">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">North Korea</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">朝鲜</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q423</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1873107</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">North_Korea</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Korea</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">韩国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q884</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1835841</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South_Korea</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#XK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kosovo</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">科索沃</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">831053</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kuwait</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">科威特</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q817</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">285570</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kuwait</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cayman Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">开曼群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q5785</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3580718</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#KZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kazakhstan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">哈萨克斯坦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q232</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1522867</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kazakhstan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laos</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">老挝</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q819</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1655842</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laos</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LB">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lebanon</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黎巴嫩</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q822</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">272103</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lebanon</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint Lucia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣卢西亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q760</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3576468</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Lucia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liechtenstein</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">列支敦士登</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q347</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3042058</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liechtenstein</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri Lanka</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">斯里兰卡</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q854</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1227603</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sri_Lanka</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liberia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">利比里亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1014</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2275384</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liberia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesotho</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">莱索托</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1013</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">932692</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesotho</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lithuania</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">立陶宛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q37</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">597427</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lithuania</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luxembourg</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">卢森堡</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q32</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2960313</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luxembourg</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LV">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Latvia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">拉脱维亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q211</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">458258</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Latvia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#LY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Libya</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">利比亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1016</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2215636</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Libya</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Morocco</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">摩洛哥</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1028</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2542007</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Morocco</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Monaco</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">摩纳哥</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q235</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2993457</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Monaco</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MD">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Moldova</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">摩尔多瓦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q217</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">617790</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Moldova</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ME">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Montenegro</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">黑山</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q236</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3194884</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Montenegro</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint Martin</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">法属圣马丁</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q126125</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3578421</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Madagascar</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马达加斯加</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1019</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1062947</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Madagascar</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marshall Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马绍尔群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q709</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2080185</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marshall_Islands</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">North Macedonia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">北马其顿</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q221</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">718075</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Republic_of_Macedonia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ML">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mali</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马里</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q912</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2453866</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mali</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myanmar</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">缅甸</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q836</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1327865</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burma</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mongolia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">蒙古</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q711</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2029969</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mongolia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Macao</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">澳门</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q14773</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1821275</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Macau</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MP">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Northern Mariana Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">北马里亚纳群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q16644</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4041468</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MQ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Martinique</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马提尼克</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q17054</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3570311</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mauritania</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">毛里塔尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1025</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2378080</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mauritania</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Montserrat</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">蒙特塞拉特</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q13353</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3578097</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malta</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马耳他</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q233</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2562770</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malta</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mauritius</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">毛里求斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1027</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">934292</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mauritius</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MV">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maldives</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马尔代夫</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q826</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1282028</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maldives</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malawi</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马拉维</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1020</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">927384</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malawi</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MX">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mexico</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">墨西哥</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q96</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3996063</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mexico</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malaysia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马来西亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q833</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1733045</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malaysia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#MZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mozambique</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">莫桑比克</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1029</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1036973</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mozambique</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Namibia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纳米比亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1030</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3355338</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New Caledonia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">新喀里多尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q33788</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2139685</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Niger</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">尼日尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1032</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2440476</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Niger</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norfolk Island</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">诺福克岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q31057</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2155115</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nigeria</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">尼日利亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1033</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2328926</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nigeria</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nicaragua</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">尼加拉瓜</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q811</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3617476</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nicaragua</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Netherlands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">荷兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q55</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2750405</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Netherlands</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norway</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">挪威</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q20</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3144096</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norway</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NP">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nepal</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">尼泊尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q837</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1282988</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nepal</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nauru</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">瑙鲁</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q697</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2110425</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nauru</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Niue</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">纽埃</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q34020</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4036232</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#NZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New Zealand</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">新西兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q664</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2186224</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New_Zealand</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#OM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oman</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">阿曼</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q842</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">286963</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oman</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panama</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴拿马</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q804</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3703430</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panama</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peru</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">秘鲁</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q419</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3932488</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peru</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">French Polynesia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">法属波利尼西亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q30971</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4030656</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Papua New Guinea</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴布亚新几内亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q691</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2088628</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Papua_New_Guinea</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippines</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">菲律宾</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q928</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1694008</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippines</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pakistan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴基斯坦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q843</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1168579</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pakistan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poland</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">波兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q36</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">798544</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poland</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint Pierre and Miquelon</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣皮埃尔和密克隆群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q34617</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3424932</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pitcairn</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">皮特凯恩群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q35672</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4030699</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puerto Rico</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">波多黎各</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1183</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4566966</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Palestinian Territory</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴勒斯坦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q219060</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6254930</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portugal</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">葡萄牙</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q45</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2264397</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portugal</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Palau</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">帕劳</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q695</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1559582</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Palau</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#PY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paraguay</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">巴拉圭</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q733</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3437598</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paraguay</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#QA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qatar</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">卡塔尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q846</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">289688</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qatar</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#RE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reunion</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">留尼汪</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q17070</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">935317</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#RO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Romania</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">罗马尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q218</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">798549</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Romania</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#RS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Serbia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">塞尔维亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q403</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6290252</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Serbia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#RU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">俄罗斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q159</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017370</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#RW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rwanda</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">卢旺达</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1037</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">49518</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rwanda</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saudi Arabia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">沙特阿拉伯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q851</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">102358</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saudi_Arabia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SB">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solomon Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">所罗门群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q685</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2103350</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solomon_Islands</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seychelles</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">塞舌尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1042</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">241170</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seychelles</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SD">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sudan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">苏丹</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1049</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">366755</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sudan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Sudan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">南苏丹</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q958</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7909807</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sweden</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">瑞典</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q34</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2661886</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sweden</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singapore</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">新加坡</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q334</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1880251</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singapore</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint Helena</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣赫勒拿</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q192184</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3370751</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slovenia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">斯洛文尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q215</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3190538</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slovenia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SJ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Svalbard and Jan Mayen</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">斯瓦尔巴和扬马延</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q842829</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">607072</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slovakia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">斯洛伐克</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q214</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3057568</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slovakia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sierra Leone</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">塞拉利昂</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1044</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2403846</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sierra_Leone</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">San Marino</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣马力诺</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q238</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3168068</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">San_Marino</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Senegal</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">塞内加尔</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1041</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2245662</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Senegal</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Somalia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">索马里</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1045</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">51537</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Somalia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suriname</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">苏里南</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q730</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3382998</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suriname</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ST">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sao Tome and Principe</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣多美和普林西比</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1039</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2410758</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SV">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El Salvador</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">萨尔瓦多</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q792</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3585968</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El_Salvador</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SX">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sint Maarten</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣马丁岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q26273</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7609695</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Syria</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">叙利亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q858</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">163843</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Syria</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#SZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eswatini</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">斯威士兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1050</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">934841</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Swaziland</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turks and Caicos Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">特克斯和凯科斯群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q18221</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3576916</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TD">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chad</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">乍得</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q657</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2434508</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chad</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">French Southern Territories</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">法属南部领地</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q129003</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1546748</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Togo</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">多哥</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q945</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2363686</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Togo</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TH">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thailand</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">泰国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q869</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1605651</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thailand</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TJ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tajikistan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">塔吉克斯坦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q863</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1220409</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tajikistan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TK">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tokelau</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">托克劳</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q36823</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4031074</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TL">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Timor Leste</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">东帝汶</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q574</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1966436</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">East_Timor</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turkmenistan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">土库曼斯坦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q874</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1218197</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turkmenistan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tunisia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">突尼斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q948</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2464461</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tunisia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TO">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tonga</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">汤加</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q678</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4032283</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tonga</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TR">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turkey</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">土耳其</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q43</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">298795</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turkey</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trinidad and Tobago</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">特立尼达和多巴哥</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q754</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3573591</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trinidad_and_Tobago</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TV">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuvalu</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">图瓦卢</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q672</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2110297</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuvalu</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taiwan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">台湾</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q865</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1668284</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Republic_of_China</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#TZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tanzania</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">坦桑尼亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q924</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">149590</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tanzania</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#UA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ukraine</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">乌克兰</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q212</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">690791</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ukraine</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#UG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uganda</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">乌干达</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1036</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">226074</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uganda</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#UM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United States Minor Outlying Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">美国本土外小岛屿</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q16645</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5854968</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#US">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United States</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">美国</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q30</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6252001</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United_States</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#UY">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uruguay</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">乌拉圭</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q77</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3439705</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uruguay</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#UZ">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uzbekistan</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">乌兹别克斯坦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q265</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1512440</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uzbekistan</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#VA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vatican</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">梵蒂冈</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q237</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3164670</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vatican_City</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#VC">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint Vincent and the Grenadines</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">圣文森特和格林纳丁斯</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q757</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3577815</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Vincent_and_the_Grenadines</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#VE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Venezuela</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">委内瑞拉</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q717</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3625428</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Venezuela</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#VG">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">British Virgin Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">英属维尔京群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q25305</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3577718</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#VI">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U.S. Virgin Islands</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">美属维尔京群岛</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q11703</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4796775</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#VN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vietnam</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">越南</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q881</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1562822</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vietnam</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#VU">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vanuatu</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">瓦努阿图</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q686</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2134431</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vanuatu</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#WF">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wallis and Futuna</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">瓦利斯和富图纳</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q35555</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4034749</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#WS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Samoa</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">萨摩亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q683</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4034894</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Samoa</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#YE">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yemen</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">也门</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q805</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">69543</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yemen</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#YT">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mayotte</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">马约特</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q17063</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1024031</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ZA">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Africa</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">南非</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q258</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">953987</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South_Africa</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ZM">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zambia</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">赞比亚</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q953</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">895949</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zambia</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#ZW">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zimbabwe</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">津巴布韦</sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q954</onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">878675</onto:geonamesId>
+  <onto:dbpediaId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zimbabwe</onto:dbpediaId_place>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#CS">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Serbia and Montenegro</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8505033</onto:geonamesId>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="https://laozi.org/country.rdf#AN">
+  <rdf:type rdf:resource="https://schema.org/Country"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Netherlands Antilles</rdfs:label>
+  <sche:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></sche:alternateName>
+  <onto:wikiId_place rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></onto:wikiId_place>
+  <onto:geonamesId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8505032</onto:geonamesId>
+</owl:NamedIndividual>
+
+<rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<swrl:Variable rdf:about="urn:swrl#book"/>
+
+<swrl:Variable rdf:about="urn:swrl#language"/>
+
+<swrl:Variable rdf:about="urn:swrl#country"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="https://schema.org/inLanguage"/>
+          <swrl:argument1 rdf:resource="urn:swrl#book"/>
+          <swrl:argument2 rdf:resource="urn:swrl#language"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#officalCountry"/>
+              <swrl:argument1 rdf:resource="urn:swrl#language"/>
+              <swrl:argument2 rdf:resource="urn:swrl#country"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#expandCountry"/>
+          <swrl:argument1 rdf:resource="urn:swrl#book"/>
+          <swrl:argument2 rdf:resource="urn:swrl#country"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="https://schema.org/inLanguage"/>
+          <swrl:argument1 rdf:resource="urn:swrl#book"/>
+          <swrl:argument2 rdf:resource="urn:swrl#language"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#officalCountry"/>
+              <swrl:argument1 rdf:resource="urn:swrl#language"/>
+              <swrl:argument2 rdf:resource="urn:swrl#country"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#expandCountry"/>
+          <swrl:argument1 rdf:resource="urn:swrl#book"/>
+          <swrl:argument2 rdf:resource="urn:swrl#country"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="https://schema.org/inLanguage"/>
+          <swrl:argument1 rdf:resource="urn:swrl#book"/>
+          <swrl:argument2 rdf:resource="urn:swrl#language"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#officalCountry"/>
+              <swrl:argument1 rdf:resource="urn:swrl#language"/>
+              <swrl:argument2 rdf:resource="urn:swrl#country"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#expandCountry"/>
+          <swrl:argument1 rdf:resource="urn:swrl#book"/>
+          <swrl:argument2 rdf:resource="urn:swrl#country"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+
+</rdf:RDF>
